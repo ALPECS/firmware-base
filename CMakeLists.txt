@@ -21,3 +21,6 @@ if(LIBKMOD_FOUND)
     target_include_directories(firmware PRIVATE ${LIBKMOD_INCLUDE_DIRS})
     target_compile_definitions(firmware PRIVATE HAVE_LIBKMOD)
 endif()
+
+# AES crypto (tinyaes — GPL-2.0-only, compiled into binary)
+target_sources(firmware PRIVATE src/crypto/tinyaes.c)
